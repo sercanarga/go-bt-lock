@@ -7,9 +7,9 @@ import (
 )
 
 var (
-	deviceMAC       = ""                       // Bluetooth Device MAC ID
+	deviceMAC       = ""      // Bluetooth Device MAC ID
 	minRSSI   int16 = -60                      // Minimum RSSI tolerance value of the bluetooth device
-	timeout         = 20 * time.Second         // Timeout Time
+	timeout         = 30 * time.Second         // Timeout Time
 	adapter         = bluetooth.DefaultAdapter // Bluetooth Receiver
 )
 
@@ -23,15 +23,11 @@ func lockWindows() {
 }
 
 func startTimer() {
-	quit := make(chan struct{})
 	go func() {
 		for {
 			select {
 			case <-timer.C:
 				lockWindows()
-			case <-quit:
-				timer.Stop()
-				return
 			}
 		}
 	}()
