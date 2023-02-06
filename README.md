@@ -23,4 +23,4 @@ To add it to startup, use `WIN+R` to open the run window and enter the command `
 # Performance
 In the tests I did, I found that it uses about 2.7mb of RAM and 0.2% to 1% CPU usage.
 
-<img src="https://i.imgur.com/kfZYEev.png" width="250">
+<img src="https://i.imgur.com/kfZYEev.png" width="350">
